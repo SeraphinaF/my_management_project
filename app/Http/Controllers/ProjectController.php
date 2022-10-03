@@ -41,7 +41,11 @@ class ProjectController extends Controller
         ]);
 
         //create a new project
-        Project::create($request->all());
+//        dd($request->all());
+        $project = Project::create($request->all());
+        $project->user_id = 1;
+        $project->save();
+        // auth()->id()
 
         //redirect the user
         return redirect()->route('projects.index');
