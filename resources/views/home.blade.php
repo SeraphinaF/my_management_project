@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@vite('resources/sass/home.css');
+@vite('resources/sass/home.scss');
 
 @section('content')
 <div class="container">
