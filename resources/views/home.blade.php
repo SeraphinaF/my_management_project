@@ -23,7 +23,8 @@
                             <small>Let's get productive!</small>
                         </h2>
                     </div>
-                    <form class="card-form">
+                    <form class="card-form" action="projects/create">
+                        @csrf
                         <div class="input">
                             <input type="text" name="project_name" class="input-field" value="" required/>
                             <label class="input-label">Project name</label>

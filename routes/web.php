@@ -1,6 +1,7 @@
 <?php
 
 use \App\Http\Controllers\ProjectController;
+use \App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,5 @@ Route::resource('projects', ProjectController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/projects/create',[App\Http\Controllers\HomeController::class, 'create'])->name('home');
