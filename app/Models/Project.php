@@ -8,6 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+    protected $fillable =
+        [
+        'project_name',
+        'deadline',
+            'user-id',
+        'updated_at',
+        'created_at'
+    ];
+
     public $timestamps = false;
 
     public function category()
@@ -19,11 +28,4 @@ class Project extends Model
     {
         return $this->hasMany('App\Task');
     }
-
-    protected $fillable = [
-        'project_name',
-        'deadline',
-        'updated_at',
-        'created_at'
-    ];
 }
