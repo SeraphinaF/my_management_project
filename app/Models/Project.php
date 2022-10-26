@@ -13,8 +13,9 @@ class Project extends Model
         'project_name',
         'deadline',
             'user-id',
+            'category_id',
         'updated_at',
-        'created_at'
+        'created_at',
     ];
 
     public $timestamps = false;

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->integer('users_id')->after('id')->unsigned();
+            $table->integer('users_id')->nullable()->after('id')->unsigned();
         });
     }
 
