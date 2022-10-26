@@ -24,5 +24,5 @@ Route::resource('projects', ProjectController::class);
 
 Auth::routes();
 
-Route::get('/view', 'App\Http\Controllers\ViewController@index');
+Route::get('/index', 'App\Http\Controllers\ProjectController@index');
 
