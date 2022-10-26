@@ -1,6 +1,6 @@
 <?php
 
-use \App\Http\Controllers\ProjectController;
+//use \App\Http\Controllers\ProjectController;
 //use \App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::resource('projects', ProjectController::class);
 //productController::class
 
 Auth::routes();
 
-Route::get('/view', 'App\Http\Controllers\ViewController@index');
+Route::get('/create','App\Http\Controllers\ProjectController@create');
 

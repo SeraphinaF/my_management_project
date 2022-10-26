@@ -14,10 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $data = Project::all();
-        return view ('projects.view',['projects'=>$data]);
-//        return Project::all();
-//        return view('view');
+        return view('create');
     }
 
     /**
@@ -27,7 +24,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.task');
+        return view('create');
     }
 
     /**
@@ -38,19 +35,19 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         $request->validate([
             'project_name' => 'required|max:255',
-            'category' => 'required',
+            //'category' => 'required',
             'deadline' => 'required',
         ]);
 
-        $prpject = Project::create($request->all());
-        // koppel user id en save
-
-
-
+        Project::create($request->all());
+//        ([
+//            'user_id' => auth()->user()->id,
+//        ]);
         return redirect()->route('projects.index');
-
+        dd(Auth::user());
     }
 
     /**
