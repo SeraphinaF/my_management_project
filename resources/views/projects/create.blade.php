@@ -1,10 +1,10 @@
 <?php
-//START SESSION
-session_start();
-
-//REGISTER VARIABLES
-$_SESSION['project_name']= $projectname;
-$_SESSION['deadline']= $deadline;
+////START SESSION
+//session_start();
+//
+////REGISTER VARIABLES
+//$_SESSION['project_name']= $projectname;
+//$_SESSION['deadline']= $deadline;
 ?>
 
 @extends('layouts.app')
@@ -37,20 +37,27 @@ $_SESSION['deadline']= $deadline;
                         @endif
                         <form class="card-form" action="{{route('projects.store')}}" method="post">
                             @csrf
+
                             <div class="input">
                                 <input type="text" name="project_name" class="input-field" value="" >
                                 <label class="input-label">Project name</label>
                             </div>
-                            <div class="input">
-                                <input type="text" name="category" class="input-field" value="" >
-                                <label class="input-label">Category</label>
-                            </div>
+
+                            <label class="input-label">Category</label>
+                            <select name="category_id" class="input-field">
+                                <option value=""></option>
+                                @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
+
                             <div class="input">
                                 <input type="datetime-local" name="deadline" class="input-field" value="" >
                                 <label class="input-label">Deadline</label>
                             </div>
                             <div class="action">
                                 <button class="action-button" type="submit">Get started</button>
+                                //send to next form
                             </div>
                         </form>
                     </div>

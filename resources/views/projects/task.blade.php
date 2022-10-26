@@ -1,16 +1,17 @@
-@vite('resources/js/app.js');
+@extends('layouts.app')
+@section('content')
 
-<div id="myDIV" class="header">
-    <h2>My To Do List</h2>
-    <input type="text" id="myInput" placeholder="Title...">
-    <span onclick="newElement()" class="addBtn">Add</span>
-</div>
+    <div class="container">
+        <div class="form">
+            <input type="text" class="input" />
+            <input type="submit" class="add" value="Add Task" />
+        </div>
+        <div class="tasks"></div>
+        <button class="action-button" type="submit">DONE!</button>
+        //style met de delete-all
+    </div>
 
-<ul id="myUL">
-    <li>Hit the gym</li>
-    <li class="checked">Pay bills</li>
-    <li>Meet George</li>
-    <li>Buy eggs</li>
-    <li>Read a book</li>
-    <li>Organize office</li>
-</ul>
+
+
+@endsection
+{{--IN ACTION -> href = "{{route('projects.index')}}"--}}

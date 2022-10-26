@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Http\Request;
+
 
 class ProjectController extends Controller
 {
@@ -15,9 +17,7 @@ class ProjectController extends Controller
     public function index()
     {
         $data = Project::all();
-        return view ('projects.view',['projects'=>$data]);
-//        return Project::all();
-//        return view('view');
+        return view ('projects.view')->withProjects($data);
     }
 
     /**
@@ -27,7 +27,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.task');
+        //Find categories
+        //Store in variables and pass into view
+        $categories = Category::all();
+        return view('projects.task', )->withCategories($categories);
     }
 
     /**
@@ -40,14 +43,12 @@ class ProjectController extends Controller
     {
         $request->validate([
             'project_name' => 'required|max:255',
-            'category' => 'required',
+            'category_id' => 'required',
             'deadline' => 'required',
         ]);
 
-        $prpject = Project::create($request->all());
+        $project = Project::create($request->all());
         // koppel user id en save
-
-
 
         return redirect()->route('projects.index');
 

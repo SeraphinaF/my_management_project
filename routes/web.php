@@ -1,6 +1,7 @@
 <?php
 
 use \App\Http\Controllers\ProjectController;
+use \App\Http\Controllers\CategoryController;
 //use \App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,8 +22,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('projects', ProjectController::class);
 //productController::class
+Route::resource('categories', CategoryController::class);
 
 Auth::routes();
 
+//niet nodig
 Route::get('/index', 'App\Http\Controllers\ProjectController@index');
 
+Auth::routes();
+
+//niet nodig?
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

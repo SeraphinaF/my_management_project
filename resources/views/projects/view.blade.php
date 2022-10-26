@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="">
+        <a href="{{ route('projects.create') }}">Create new project</a>
+        <a href="{{ route('projects.create') }}">Add new category</a>
+    </div>
         <table class="">
             <tr>
                 <td><strong>Project Name</strong></td>
