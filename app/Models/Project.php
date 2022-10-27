@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,12 +11,13 @@ class Project extends Model
     use HasFactory;
     protected $fillable =
         [
-        'project_name',
-        'deadline',
-            'user-id',
+            'project_name',
+            'deadline',
+//          'user_id',
             'category_id',
-        'updated_at',
-        'created_at',
+            'task',
+            'updated_at',
+            'created_at',
     ];
 
     public $timestamps = false;

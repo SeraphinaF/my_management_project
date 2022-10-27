@@ -1,10 +1,4 @@
 <?php
-////START SESSION
-//session_start();
-//
-////REGISTER VARIABLES
-//$_SESSION['project_name']= $projectname;
-//$_SESSION['deadline']= $deadline;
 ?>
 
 @extends('layouts.app')

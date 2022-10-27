@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
     <div class="container">
         <div class="form">
             <input type="text" class="input" />
@@ -10,8 +9,5 @@
         <button class="action-button" type="submit">DONE!</button>
         //style met de delete-all
     </div>
-
-
-
 @endsection
-{{--IN ACTION -> href = "{{route('projects.index')}}"--}}
+

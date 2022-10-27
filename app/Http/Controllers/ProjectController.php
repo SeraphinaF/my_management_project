@@ -30,7 +30,7 @@ class ProjectController extends Controller
         //Find categories
         //Store in variables and pass into view
         $categories = Category::all();
-        return view('projects.task', )->withCategories($categories);
+        return view('projects.create', )->withCategories($categories);
     }
 
     /**
@@ -62,7 +62,8 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        //Show task page
+        return view('projects.task');
     }
 
     /**
