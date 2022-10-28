@@ -14,7 +14,7 @@
             <tr>
                 <td>{{$project['project_name']}}</td>
                 <td>{{$project['deadline']}}</td>
-                <td><a href="{{ route('projects.show', $project->id) }}">View</a></td>
+                <td><a href="{{ route('projects/{}.show') }}">View</a></td>
             </tr>
             @endforeach
         </table>
